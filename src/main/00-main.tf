@@ -1,12 +1,12 @@
 terraform {
-  required_version = "~> <terraform latest version eg: 1.1.0>"
+  required_version = "~> 1.1.5"
 
   backend "s3" {}
 
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> <terraform aws plugin version eg: 4.0.0>"
+      version = "~> 4.22.0"
     }
   }
 }
