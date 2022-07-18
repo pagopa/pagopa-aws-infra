@@ -1,5 +1,5 @@
 module "ses" {
-  source = "git::https://github.com/pagopa/terraform-aws-ses.git?ref=v1.0.0"
+  source = "github.com/pagopa/terraform-aws-ses.git?ref=v1.0.1"
   domain = "pagopa.gov.it"
 
   iam_permissions = [
@@ -11,5 +11,7 @@ module "ses" {
 
   ses_group_name = "pagoPaSES"
   user_name      = "ProjectPagoPa"
+
+  iam_allowed_resources = [format("arn:aws:ses:%s:%s:identity/*", var.aws_region, data.aws_caller_identity.current.id)]
 
 }
