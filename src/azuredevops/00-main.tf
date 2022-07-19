@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~> 1.1.5"
+  required_version = "~> 1.2.5"
 
   ## TODO move this part as external configuration when you bild PROD.
   backend "s3" {
