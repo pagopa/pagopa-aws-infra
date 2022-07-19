@@ -3,7 +3,7 @@ resource "azuredevops_serviceendpoint_github" "github_ro" {
   project_id            = azuredevops_project.this.id
   service_endpoint_name = "github-ro"
   auth_personal {
-    personal_access_token = jsondecode(data.aws_secretsmanager_secret_version.devops_uat.secret_string)["github_ro_token"]
+    personal_access_token = jsondecode(data.aws_secretsmanager_secret_version.devops_prod.secret_string)["github_ro_token"]
   }
   lifecycle {
     ignore_changes = [description, authorization]
@@ -16,7 +16,7 @@ resource "azuredevops_serviceendpoint_github" "github_pr" {
   project_id            = azuredevops_project.this.id
   service_endpoint_name = "github-pr"
   auth_personal {
-    personal_access_token = jsondecode(data.aws_secretsmanager_secret_version.devops_uat.secret_string)["github_pr_token"]
+    personal_access_token = jsondecode(data.aws_secretsmanager_secret_version.devops_prod.secret_string)["github_pr_token"]
   }
   lifecycle {
     ignore_changes = [description, authorization]
@@ -24,6 +24,7 @@ resource "azuredevops_serviceendpoint_github" "github_pr" {
 }
 
 # Service connection to connecto to AWS.
+/*
 resource "azuredevops_serviceendpoint_aws" "uat_serviceendpoint" {
   project_id            = azuredevops_project.this.id
   service_endpoint_name = "AWS Uat"
@@ -35,6 +36,7 @@ resource "azuredevops_serviceendpoint_aws" "uat_serviceendpoint" {
   data.aws_secretsmanager_secret_version.devops_uat.secret_string)["aws_iac_secret_access_key"]
 }
 
+*/
 resource "azuredevops_serviceendpoint_aws" "prod_serviceendpoint" {
   project_id            = azuredevops_project.this.id
   service_endpoint_name = "AWS Prod"

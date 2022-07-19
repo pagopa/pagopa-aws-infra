@@ -7,7 +7,7 @@ locals {
 resource "azuredevops_project" "this" {
   name               = var.project_name
   description        = var.project_description
-  visibility         = "private"
+  visibility         = "public"
   version_control    = "Git"
   work_item_template = "Basic"
 }

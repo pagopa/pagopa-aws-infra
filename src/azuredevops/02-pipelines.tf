@@ -13,7 +13,6 @@ module "iac_deploy" {
 
   service_connection_ids_authorization = [
     azuredevops_serviceendpoint_github.github_ro.id,
-    azuredevops_serviceendpoint_aws.uat_serviceendpoint.id,
     azuredevops_serviceendpoint_aws.prod_serviceendpoint.id,
   ]
 }
