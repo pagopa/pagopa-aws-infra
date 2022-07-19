@@ -2,7 +2,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.1.5 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.2.5 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.22.0 |
 
 ## Providers
@@ -15,7 +15,7 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_ses"></a> [ses](#module\_ses) | git::https://github.com/pagopa/terraform-aws-ses.git?ref=v1.0.0 |  |
+| <a name="module_ses"></a> [ses](#module\_ses) | github.com/pagopa/terraform-aws-ses.git?ref=v1.0.2 |  |
 
 ## Resources
 

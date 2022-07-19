@@ -1,6 +1,7 @@
 module "ses" {
-  source = "github.com/pagopa/terraform-aws-ses.git?ref=v1.0.1"
-  domain = "pagopa.gov.it"
+  source     = "github.com/pagopa/terraform-aws-ses.git?ref=v1.0.2"
+  domain     = "pagopa.gov.it"
+  aws_region = var.aws_region
 
   iam_permissions = [
     "ses:SendCustomVerificationEmail",
