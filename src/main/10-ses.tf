@@ -8,6 +8,7 @@ module "ses" {
     "ses:SendEmail",
     "ses:SendRawEmail",
     "ses:SendTemplatedEmail",
+    "ses:GetSendQuota",
   ]
 
   ses_group_name = "pagoPaSES"
