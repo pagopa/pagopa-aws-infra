@@ -4,11 +4,10 @@ module "ses" {
   aws_region = var.aws_region
 
   iam_permissions = [
-    "ses:SendCustomVerificationEmail",
     "ses:SendEmail",
-    "ses:SendRawEmail",
-    "ses:SendTemplatedEmail",
     "ses:GetSendQuota",
+    "ses:SendRawEmail",
+    "ses:SendTemplatedEmail"
   ]
 
   ses_group_name = "pagoPaSES"
