@@ -1,5 +1,5 @@
 module "ses" {
-  source     = "github.com/pagopa/terraform-aws-ses.git?ref=v1.0.2"
+  source     = "github.com/pagopa/terraform-aws-ses.git?ref=v1.0.3"
   domain     = "pagopa.gov.it"
   aws_region = var.aws_region
 
@@ -7,13 +7,20 @@ module "ses" {
     "ses:SendCustomVerificationEmail",
     "ses:SendEmail",
     "ses:SendRawEmail",
-    "ses:SendTemplatedEmail",
-    "ses:GetSendQuota",
+    "ses:SendTemplatedEmail"
   ]
 
   ses_group_name = "pagoPaSES"
   user_name      = "ProjectPagoPa"
 
   iam_allowed_resources = [format("arn:aws:ses:%s:%s:identity/*", var.aws_region, data.aws_caller_identity.current.id)]
+
+  iam_additional_statements = [
+    {
+      sid       = "Statistics"
+      actions   = ["ses:GetSendQuota"]
+      resources = ["*"]
+    }
+  ]
 
 }
