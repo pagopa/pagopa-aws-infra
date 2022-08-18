@@ -1,6 +1,7 @@
 module "ses" {
-  source     = "github.com/pagopa/terraform-aws-ses.git?ref=v1.0.3"
+  source     = "github.com/pagopa/terraform-aws-ses.git?ref=v1.1.0"
   domain     = "pagopa.gov.it"
+  mail_from_subdomain = "email"
   aws_region = var.aws_region
 
   iam_permissions = [
