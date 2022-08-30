@@ -15,7 +15,7 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_ses"></a> [ses](#module\_ses) | github.com/pagopa/terraform-aws-ses.git?ref=v1.1.0 |  |
+| <a name="module_ses"></a> [ses](#module\_ses) | github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0 |  |
 
 ## Resources
 
