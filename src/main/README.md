@@ -15,13 +15,18 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_ses"></a> [ses](#module\_ses) | github.com/pagopa/terraform-aws-ses.git?ref=v1.0.3 |  |
+| <a name="module_ses"></a> [ses](#module\_ses) | github.com/pagopa/terraform-aws-ses.git?ref=v1.1.0 |  |
 
 ## Resources
 
 | Name | Type |
 |------|------|
+| [aws_sns_topic.alarms](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic) | resource |
+| [aws_sns_topic_subscription.alarms_email](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic_subscription) | resource |
+| [aws_sns_topic_subscription.alarms_slack](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic_subscription) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
+| [aws_secretsmanager_secret.email_operation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/secretsmanager_secret) | data source |
+| [aws_secretsmanager_secret_version.email_operation_lt](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/secretsmanager_secret_version) | data source |
 
 ## Inputs
 
