@@ -23,6 +23,18 @@ module "ses_pagopa_gov_it" {
       resources = ["*"]
     }
   ]
+
+  alarms = {
+    actions                    = [aws_sns_topic.alarms.arn]
+    daily_send_quota_threshold = 40000
+    daily_send_quota_period    = 60 * 60 * 24 # 1 day
+
+    reputation_complaint_rate_threshold = 0.8
+    reputation_complaint_rate_period    = 60 * 60 # 1 hour.
+
+    reputation_bounce_rate_threshold = 0.1
+    reputation_bounce_rate_period    = 5 * 60 # 5min
+  }
 }
 
 
