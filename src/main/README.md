@@ -15,11 +15,8 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-<<<<<<< HEAD
-| <a name="module_ses"></a> [ses](#module\_ses) | github.com/pagopa/terraform-aws-ses.git?ref=v1.1.0 |  |
-=======
-| <a name="module_ses"></a> [ses](#module\_ses) | github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0 |  |
->>>>>>> 216743d (Sending quota alerts (#8))
+| <a name="module_ses_pagopa_gov_it"></a> [ses\_pagopa\_gov\_it](#module\_ses\_pagopa\_gov\_it) | github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0 |  |
+| <a name="module_ses_pagopa_it"></a> [ses\_pagopa\_it](#module\_ses\_pagopa\_it) | github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0 |  |
 
 ## Resources
 
@@ -47,7 +44,11 @@
 
 | Name | Description |
 |------|-------------|
-| <a name="output_dkim_tokens"></a> [dkim\_tokens](#output\_dkim\_tokens) | n/a |
-| <a name="output_ses_user_access_key_id"></a> [ses\_user\_access\_key\_id](#output\_ses\_user\_access\_key\_id) | n/a |
-| <a name="output_ses_user_secret_access_key"></a> [ses\_user\_secret\_access\_key](#output\_ses\_user\_secret\_access\_key) | n/a |
-| <a name="output_verification_token"></a> [verification\_token](#output\_verification\_token) | n/a |
+| <a name="output_ses_pagopa_gov_it_dkim_tokens"></a> [ses\_pagopa\_gov\_it\_dkim\_tokens](#output\_ses\_pagopa\_gov\_it\_dkim\_tokens) | n/a |
+| <a name="output_ses_pagopa_gov_it_user_access_key_id"></a> [ses\_pagopa\_gov\_it\_user\_access\_key\_id](#output\_ses\_pagopa\_gov\_it\_user\_access\_key\_id) | n/a |
+| <a name="output_ses_pagopa_gov_it_user_secret_access_key"></a> [ses\_pagopa\_gov\_it\_user\_secret\_access\_key](#output\_ses\_pagopa\_gov\_it\_user\_secret\_access\_key) | n/a |
+| <a name="output_ses_pagopa_gov_it_verification_token"></a> [ses\_pagopa\_gov\_it\_verification\_token](#output\_ses\_pagopa\_gov\_it\_verification\_token) | n/a |
+| <a name="output_ses_pagopa_it_dkim_tokens"></a> [ses\_pagopa\_it\_dkim\_tokens](#output\_ses\_pagopa\_it\_dkim\_tokens) | n/a |
+| <a name="output_ses_pagopa_it_user_access_key_id"></a> [ses\_pagopa\_it\_user\_access\_key\_id](#output\_ses\_pagopa\_it\_user\_access\_key\_id) | n/a |
+| <a name="output_ses_pagopa_it_user_secret_access_key"></a> [ses\_pagopa\_it\_user\_secret\_access\_key](#output\_ses\_pagopa\_it\_user\_secret\_access\_key) | n/a |
+| <a name="output_ses_pagopa_it_verification_token"></a> [ses\_pagopa\_it\_verification\_token](#output\_ses\_pagopa\_it\_verification\_token) | n/a |
