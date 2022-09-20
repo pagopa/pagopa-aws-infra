@@ -1,5 +1,5 @@
-module "ses" {
-  source              = "github.com/pagopa/terraform-aws-ses.git?ref=v1.1.0"
+module "ses_pagopa_gov_it" {
+  source              = "github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0"
   domain              = "pagopa.gov.it"
   mail_from_subdomain = "email"
   aws_region          = var.aws_region
@@ -26,8 +26,8 @@ module "ses" {
 }
 
 
-module "ses" {
-  source              = "github.com/pagopa/terraform-aws-ses.git?ref=v1.1.0"
+module "ses_pagopa_it" {
+  source              = "github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0"
   domain              = "pagopa.it"
   mail_from_subdomain = "email"
   aws_region          = var.aws_region
