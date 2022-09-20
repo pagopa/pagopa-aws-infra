@@ -1,16 +1,37 @@
-output "verification_token" {
-  value = module.ses.verification_token
+# pagopa.gov.it
+
+output "ses_pagopa_gov_it_verification_token" {
+  value = module.ses_pagopa_gov_it.verification_token
 }
 
-output "dkim_tokens" {
-  value = module.ses.dkim_tokens
+output "ses_pagopa_gov_it_dkim_tokens" {
+  value = module.ses_pagopa_gov_it.dkim_tokens
 }
 
-output "ses_user_access_key_id" {
-  value = module.ses.ses_user_access_key_id
+output "ses_pagopa_gov_it_user_access_key_id" {
+  value = module.ses_pagopa_gov_it.ses_user_access_key_id
 }
 
-output "ses_user_secret_access_key" {
-  value     = module.ses.ses_user_secret_access_key
+output "ses_pagopa_gov_it_user_secret_access_key" {
+  value     = module.ses_pagopa_gov_it.ses_user_secret_access_key
+  sensitive = true
+}
+
+# pagopa.it
+
+output "ses_pagopa_it_verification_token" {
+  value = module.ses_pagopa_it.verification_token
+}
+
+output "ses_pagopa_it_dkim_tokens" {
+  value = module.ses_pagopa_it.dkim_tokens
+}
+
+output "ses_pagopa_it_user_access_key_id" {
+  value = module.ses_pagopa_it.ses_user_access_key_id
+}
+
+output "ses_pagopa_it_user_secret_access_key" {
+  value     = module.ses_pagopa_it.ses_user_secret_access_key
   sensitive = true
 }
