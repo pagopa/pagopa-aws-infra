@@ -1,5 +1,4 @@
 module "ses_pagopa_gov_it" {
-
   source              = "github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0"
   domain              = "pagopa.gov.it"
   mail_from_subdomain = "email"
