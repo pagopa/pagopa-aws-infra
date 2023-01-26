@@ -7,7 +7,13 @@ variable "aws_region" {
 variable "environment" {
   type        = string
   description = "Environment. Possible values are: Dev, Uat, Prod"
-  default     = "Uat"
+  default     = "Dev"
+}
+
+variable "github_repository" {
+  type        = string
+  description = "This github repository"
+  default     = "pagopa/pagopa-aws-infra"
 }
 
 
