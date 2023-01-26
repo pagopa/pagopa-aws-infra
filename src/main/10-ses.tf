@@ -14,8 +14,6 @@ module "ses_pagopa_gov_it" {
   ses_group_name = "pagoPaSES"
   user_name      = "ProjectPagoPa"
 
-  iam_allowed_resources = [format("arn:aws:ses:%s:%s:identity/*", var.aws_region, data.aws_caller_identity.current.id)]
-
   iam_additional_statements = [
     {
       sid       = "Statistics"
@@ -53,8 +51,6 @@ module "ses_pagopa_it" {
 
   ses_group_name = "NotificationService"
   user_name      = "notification-service"
-
-  iam_allowed_resources = [format("arn:aws:ses:%s:%s:identity/*", var.aws_region, data.aws_caller_identity.current.id)]
 
   iam_additional_statements = [
     {
