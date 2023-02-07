@@ -2,19 +2,22 @@ name: "Dispatched Terraform Apply"
 
 on:
   repository_dispatch:
+    types: ["terraform-apply-dispatched"]
+
+env:
+  ENVIRONMENT: ${{ github.event.client_payload.environment }}
+  DOMAIN: ${{ github.event.client_payload.domain }}
 
 jobs:
 
   merge-trigger:
-    if: github.ref == 'refs/heads/test-lambda-deploy-from-image'"
+    if: github.ref == 'refs/heads/main'
     name: "terraform-apply"
     strategy:
       max-parallel: 1
-      matrix:
-        environment: [dev]
     runs-on: ubuntu-latest
     continue-on-error: false
-    environment: ${{ matrix.environment }}
+    environment: ${{ env.ENVIRONMENT }}
     permissions:
       id-token: write   # This is required for requesting the JWT
       contents: read    # This is required for actions/checkout
@@ -34,5 +37,5 @@ jobs:
       - name: Apply
         uses: ./.github/workflows/apply
         with:
-          env: ${{ matrix.environment }}
-          working-directory: src/lambdatemplate
+          env: ${{ env.ENVIRONMENT }}
+          working-directory: src/${{ env.DOMAIN }}
