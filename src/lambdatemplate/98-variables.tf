@@ -1,13 +1,13 @@
 variable "aws_region" {
   type        = string
-  description = "AWS region used to create resources. Default: Milan"
   default     = "eu-south-1"
+  description = "AWS region used to create resources. Default: Milan"
 }
 
 variable "app_name" {
   type        = string
-  description = "Application name"
   default     = "lambdatemplate"
+  description = "Application name"
 }
 
 variable "environment" {
@@ -22,6 +22,12 @@ variable "env_short" {
   description = "Abbreviation for deploy environment"
 }
 
+variable "github_lambda_repository" {
+  type        = string
+  default     = "pagopa/pagopa-aws-lambda-template"
+  description = "GitHub repository related to the Lambda function project"
+}
+
 variable "lambda_log_retention" {
   type        = number
   default     = 30
@@ -30,8 +36,8 @@ variable "lambda_log_retention" {
 
 variable "prefix" {
   type        = string
-  description = "Application platform prefix"
   default     = "pagopa"
+  description = "Application platform prefix"
 }
 
 variable "tags" {
