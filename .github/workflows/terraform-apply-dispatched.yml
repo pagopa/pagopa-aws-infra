@@ -5,8 +5,7 @@ on:
     types: ["terraform-apply-dispatched"]
 
 jobs:
-
-  merge-trigger:
+  dispatch-trigger:
     if: github.ref == 'refs/heads/main'
     name: "terraform-apply"
     strategy:
