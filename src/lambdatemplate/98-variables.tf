@@ -28,6 +28,12 @@ variable "github_lambda_repository" {
   description = "GitHub repository related to the Lambda function project"
 }
 
+variable "image_tag_mutability" {
+  type        = string
+  default     = "MUTABLE"
+  description = "Image mutability for container registry"
+}
+
 variable "lambda_log_retention" {
   type        = number
   default     = 30

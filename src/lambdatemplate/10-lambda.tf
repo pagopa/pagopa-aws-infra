@@ -1,22 +1,3 @@
-# Provisioner for login on AWS ECR resources
-resource "null_resource" "container_registry_login" {
-  provisioner "local-exec" {
-    command = <<EOF
-                aws ecr get-login-password --region ${var.aws_region} | docker login --username AWS --password-stdin ${local.ecr_url}
-                EOF
-    interpreter = ["bash", "-c"]
-  }
-}
-
-# Data related to Docker lambda image
-data "aws_ecr_image" "lambdatemplate_image" {
-  depends_on = [
-    null_resource.container_registry_login
-  ]
-  repository_name = local.ecr_repository_name
-  image_tag       = local.ecr_image_tag
-}
-
 # Resource related to the lambda function
 resource "aws_lambda_function" "lambdatemplate" {
   function_name    = "lambdatemplate-${var.env_short}-lambda"
