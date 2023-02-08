@@ -4,10 +4,6 @@ on:
   repository_dispatch:
     types: ["terraform-apply-dispatched"]
 
-env:
-  ENVIRONMENT: ${{ github.event.client_payload.environment }}
-  DOMAIN: ${{ github.event.client_payload.domain }}
-
 jobs:
 
   merge-trigger:
@@ -17,7 +13,7 @@ jobs:
       max-parallel: 1
     runs-on: ubuntu-latest
     continue-on-error: false
-    environment: ${{ env.ENVIRONMENT }}
+    environment: ${{ github.event.client_payload.environment }}
     permissions:
       id-token: write   # This is required for requesting the JWT
       contents: read    # This is required for actions/checkout
@@ -37,5 +33,5 @@ jobs:
       - name: Apply
         uses: ./.github/workflows/apply
         with:
-          env: ${{ env.ENVIRONMENT }}
-          working-directory: src/${{ env.DOMAIN }}
+          env: ${{ github.event.client_payload.environment }}
+          working-directory: src/${{ github.event.client_payload.domain }}
