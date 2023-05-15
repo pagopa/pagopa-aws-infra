@@ -36,9 +36,9 @@ module "ses_pagopa_gov_it" {
 }
 
 
-module "ses_pagopa_it" {
+module "ses_ricevute_pagopa_it" {
   source              = "github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0"
-  domain              = "pagopa.it"
+  domain              = "ricevute.pagopa.it"
   mail_from_subdomain = "email"
   aws_region          = var.aws_region
 

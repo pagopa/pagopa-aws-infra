@@ -2,7 +2,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.2.5 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.22.0 |
 
 ## Providers
@@ -16,7 +16,7 @@
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_ses_pagopa_gov_it"></a> [ses\_pagopa\_gov\_it](#module\_ses\_pagopa\_gov\_it) | github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0 |  |
-| <a name="module_ses_pagopa_it"></a> [ses\_pagopa\_it](#module\_ses\_pagopa\_it) | github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0 |  |
+| <a name="module_ses_ricevute_pagopa_it"></a> [ses\_ricevute\_pagopa\_it](#module\_ses\_ricevute\_pagopa\_it) | github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0 |  |
 
 ## Resources
 
@@ -48,7 +48,7 @@
 | <a name="output_ses_pagopa_gov_it_user_access_key_id"></a> [ses\_pagopa\_gov\_it\_user\_access\_key\_id](#output\_ses\_pagopa\_gov\_it\_user\_access\_key\_id) | n/a |
 | <a name="output_ses_pagopa_gov_it_user_secret_access_key"></a> [ses\_pagopa\_gov\_it\_user\_secret\_access\_key](#output\_ses\_pagopa\_gov\_it\_user\_secret\_access\_key) | n/a |
 | <a name="output_ses_pagopa_gov_it_verification_token"></a> [ses\_pagopa\_gov\_it\_verification\_token](#output\_ses\_pagopa\_gov\_it\_verification\_token) | n/a |
-| <a name="output_ses_pagopa_it_dkim_tokens"></a> [ses\_pagopa\_it\_dkim\_tokens](#output\_ses\_pagopa\_it\_dkim\_tokens) | n/a |
-| <a name="output_ses_pagopa_it_user_access_key_id"></a> [ses\_pagopa\_it\_user\_access\_key\_id](#output\_ses\_pagopa\_it\_user\_access\_key\_id) | n/a |
-| <a name="output_ses_pagopa_it_user_secret_access_key"></a> [ses\_pagopa\_it\_user\_secret\_access\_key](#output\_ses\_pagopa\_it\_user\_secret\_access\_key) | n/a |
-| <a name="output_ses_pagopa_it_verification_token"></a> [ses\_pagopa\_it\_verification\_token](#output\_ses\_pagopa\_it\_verification\_token) | n/a |
+| <a name="output_ses_pagopa_ricevute_it_user_secret_access_key"></a> [ses\_pagopa\_ricevute\_it\_user\_secret\_access\_key](#output\_ses\_pagopa\_ricevute\_it\_user\_secret\_access\_key) | n/a |
+| <a name="output_ses_ricevute_pagopa_it_dkim_tokens"></a> [ses\_ricevute\_pagopa\_it\_dkim\_tokens](#output\_ses\_ricevute\_pagopa\_it\_dkim\_tokens) | n/a |
+| <a name="output_ses_ricevute_pagopa_it_user_access_key_id"></a> [ses\_ricevute\_pagopa\_it\_user\_access\_key\_id](#output\_ses\_ricevute\_pagopa\_it\_user\_access\_key\_id) | n/a |
+| <a name="output_ses_ricevute_pagopa_it_verification_token"></a> [ses\_ricevute\_pagopa\_it\_verification\_token](#output\_ses\_ricevute\_pagopa\_it\_verification\_token) | n/a |
