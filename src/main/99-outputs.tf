@@ -36,21 +36,21 @@ output "ses_pagopa_ricevute_it_user_secret_access_key" {
   sensitive = true
 }
 
-# granfanasmtp.pagopa.it
+# platform.pagopa.it
 
-output "ses_granfanasmtp_pagopa_it_verification_token" {
-  value = module.ses_grafana_pagopa_it.verification_token
+output "ses_platform_pagopa_it_verification_token" {
+  value = module.ses_platform_pagopa_it.verification_token
 }
 
-output "ses_granfanasmtp_pagopa_it_dkim_tokens" {
-  value = module.ses_grafana_pagopa_it.dkim_tokens
+output "ses_platform_pagopa_it_dkim_tokens" {
+  value = module.ses_platform_pagopa_it.dkim_tokens
 }
 
-output "ses_granfanasmtp_pagopa_it_user_access_key_id" {
-  value = module.ses_grafana_pagopa_it.ses_user_access_key_id
+output "ses_platform_pagopa_it_user_access_key_id" {
+  value = module.ses_platform_pagopa_it.ses_user_access_key_id
 }
 
-output "ses_pagopa_granfanasmtp_it_user_secret_access_key" {
-  value     = module.ses_grafana_pagopa_it.ses_user_secret_access_key
+output "ses_pagopa_platform_it_user_secret_access_key" {
+  value     = module.ses_platform_pagopa_it.ses_user_secret_access_key
   sensitive = true
 }
