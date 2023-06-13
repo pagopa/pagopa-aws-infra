@@ -61,11 +61,18 @@ module "ses_ricevute_pagopa_it" {
   ]
 }
 
+
+# https://docs.aws.amazon.com/general/latest/gr/ses.html
 module "ses_grafana_pagopa_it" {
   source              = "github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0"
-  domain              = "ricevute.pagopa.it"
+
+  providers = {
+    aws = aws.eu-central-1
+  }
+
+  domain              = "granfanasmtp.pagopa.it"
   mail_from_subdomain = "email"
-  # aws_region          = var.aws_region
+  aws_region          = "eu-central-1" //var.aws_region # https://docs.aws.amazon.com/ses/latest/dg/smtp-credentials.html
 
   iam_permissions = [
     "ses:SendCustomVerificationEmail",
@@ -74,8 +81,8 @@ module "ses_grafana_pagopa_it" {
     "ses:SendTemplatedEmail"
   ]
 
-  ses_group_name = "NotificationService"
-  user_name      = "notification-service"
+  ses_group_name = "grafanasmtp-grp"
+  user_name      = "grafanasmtp-usr"
 
   iam_additional_statements = [
     {
