@@ -60,3 +60,28 @@ module "ses_ricevute_pagopa_it" {
     }
   ]
 }
+
+module "ses_grafana_pagopa_it" {
+  source              = "github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0"
+  domain              = "ricevute.pagopa.it"
+  mail_from_subdomain = "email"
+  # aws_region          = var.aws_region
+
+  iam_permissions = [
+    "ses:SendCustomVerificationEmail",
+    "ses:SendEmail",
+    "ses:SendRawEmail",
+    "ses:SendTemplatedEmail"
+  ]
+
+  ses_group_name = "NotificationService"
+  user_name      = "notification-service"
+
+  iam_additional_statements = [
+    {
+      sid       = "Statistics"
+      actions   = ["ses:GetSendQuota"]
+      resources = ["*"]
+    }
+  ]
+}
