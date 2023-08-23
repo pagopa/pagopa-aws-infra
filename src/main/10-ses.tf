@@ -64,7 +64,7 @@ module "ses_ricevute_pagopa_it" {
 
 # https://docs.aws.amazon.com/general/latest/gr/ses.html
 module "ses_platform_pagopa_it" {
-  source              = "github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0"
+  source = "github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0"
 
   providers = {
     aws = aws.eu-central-1
@@ -74,6 +74,33 @@ module "ses_platform_pagopa_it" {
   mail_from_subdomain = "email"
   aws_region          = "eu-central-1" //var.aws_region # https://docs.aws.amazon.com/ses/latest/dg/smtp-credentials.html
 
+  ses_group_name = "platform-grp"
+  user_name      = "platform-usr"
+
+  iam_additional_statements = [
+    {
+      sid       = "Statistics"
+      actions   = ["ses:GetSendQuota"]
+      resources = ["*"]
+    }
+  ]
+}
+
+
+# DNS pagopa.it DEFINED on org-infra
+# DNS platform.pagopa.it DEFINED on pagopa-infra
+
+# https://selfcare.pagopa.it/
+# subdomain
+# - https://io.selfcare.pagopa.it/
+# - https://selfcare.platform.pagopa.it/
+# - ...
+module "ses_selfcare_platform_pagopa_it" {
+  source              = "github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0"
+  domain              = "platform.pagopa.it"
+  mail_from_subdomain = "backoffice"
+  aws_region          = var.aws_region
+
   iam_permissions = [
     "ses:SendCustomVerificationEmail",
     "ses:SendEmail",
@@ -81,8 +108,8 @@ module "ses_platform_pagopa_it" {
     "ses:SendTemplatedEmail"
   ]
 
-  ses_group_name = "platform-grp"
-  user_name      = "platform-usr"
+  ses_group_name = "BackOfficeSelfcarePlatformPagoPa"
+  user_name      = "backoffice-selfcare-platform-pagopa"
 
   iam_additional_statements = [
     {
