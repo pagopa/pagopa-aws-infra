@@ -60,3 +60,35 @@ module "ses_ricevute_pagopa_it" {
     }
   ]
 }
+
+
+# https://docs.aws.amazon.com/general/latest/gr/ses.html
+module "ses_platform_pagopa_it" {
+  source              = "github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0"
+
+  providers = {
+    aws = aws.eu-central-1
+  }
+
+  domain              = "platform.pagopa.it"
+  mail_from_subdomain = "email"
+  aws_region          = "eu-central-1" //var.aws_region # https://docs.aws.amazon.com/ses/latest/dg/smtp-credentials.html
+
+  iam_permissions = [
+    "ses:SendCustomVerificationEmail",
+    "ses:SendEmail",
+    "ses:SendRawEmail",
+    "ses:SendTemplatedEmail"
+  ]
+
+  ses_group_name = "platform-grp"
+  user_name      = "platform-usr"
+
+  iam_additional_statements = [
+    {
+      sid       = "Statistics"
+      actions   = ["ses:GetSendQuota"]
+      resources = ["*"]
+    }
+  ]
+}
