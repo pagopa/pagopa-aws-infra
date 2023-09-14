@@ -92,3 +92,37 @@ module "ses_platform_pagopa_it" {
     }
   ]
 }
+
+
+# DNS pagopa.it DEFINED on org-infra
+# DNS platform.pagopa.it DEFINED on pagopa-infra
+
+# https://selfcare.pagopa.it/
+# subdomain
+# - https://io.selfcare.pagopa.it/
+# - https://selfcare.platform.pagopa.it/
+# - ...
+module "ses_selfcare_platform_pagopa_it" {
+  source              = "github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0"
+  domain              = "platform.pagopa.it"
+  mail_from_subdomain = "backoffice"
+  aws_region          = var.aws_region
+
+  iam_permissions = [
+    "ses:SendCustomVerificationEmail",
+    "ses:SendEmail",
+    "ses:SendRawEmail",
+    "ses:SendTemplatedEmail"
+  ]
+
+  ses_group_name = "BackOfficeSelfcarePlatformPagoPa"
+  user_name      = "backoffice-selfcare-platform-pagopa"
+
+  iam_additional_statements = [
+    {
+      sid       = "Statistics"
+      actions   = ["ses:GetSendQuota"]
+      resources = ["*"]
+    }
+  ]
+}
