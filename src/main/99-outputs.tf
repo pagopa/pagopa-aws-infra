@@ -52,6 +52,7 @@ output "ses_platform_pagopa_it_user_access_key_id" {
 
 output "ses_pagopa_platform_it_user_secret_access_key" {
   value     = module.ses_platform_pagopa_it.ses_user_secret_access_key
+  sensitive = true
 }  
 
 # selfcare.platform.pagopa.it
