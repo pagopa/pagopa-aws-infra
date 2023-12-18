@@ -97,7 +97,7 @@ module "ses_platform_pagopa_it" {
 # DNS pagopa.it DEFINED on org-infra
 # DNS platform.pagopa.it DEFINED on pagopa-infra
 
-# https://selfcare.pagopa.it/
+# https://selfcare.pagopa.it/
 # subdomain
 # - https://io.selfcare.pagopa.it/
 # - https://selfcare.platform.pagopa.it/
@@ -117,6 +117,32 @@ module "ses_selfcare_platform_pagopa_it" {
 
   ses_group_name = "BackOfficeSelfcarePlatformPagoPa"
   user_name      = "backoffice-selfcare-platform-pagopa"
+
+  iam_additional_statements = [
+    {
+      sid       = "Statistics"
+      actions   = ["ses:GetSendQuota"]
+      resources = ["*"]
+    }
+  ]
+}
+
+# Nodo dei Pagamenti
+module "ses_ndp_platform_pagopa_it" {
+  source              = "github.com/pagopa/terraform-aws-ses.git?ref=v1.2.1"
+  domain              = "platform.pagopa.it"
+  mail_from_subdomain = "ndp"
+  aws_region          = var.aws_region
+
+  iam_permissions = [
+    "ses:SendCustomVerificationEmail",
+    "ses:SendEmail",
+    "ses:SendRawEmail",
+    "ses:SendTemplatedEmail"
+  ]
+
+  ses_group_name = "NdpPlatformPagoPa"
+  user_name      = "ndp-platform-pagopa"
 
   iam_additional_statements = [
     {
