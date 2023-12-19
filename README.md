@@ -14,7 +14,7 @@ Template useful to create a AWS terraform projects
 ### How to login
 
 ```sh
-export AWS_PROFILE=<nome del profilo account aws>
+export AWS_PROFILE=ppa-pagopa-<ENV>
 aws sso login
 ```
 
