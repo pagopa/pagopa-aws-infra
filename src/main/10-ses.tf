@@ -24,7 +24,7 @@ module "ses_pagopa_gov_it" {
 
   alarms = {
     actions                    = [aws_sns_topic.alarms.arn]
-    daily_send_quota_threshold = 40000
+    daily_send_quota_threshold = 320000
     daily_send_quota_period    = 60 * 60 * 24 # 1 day
 
     reputation_complaint_rate_threshold = 0.8
