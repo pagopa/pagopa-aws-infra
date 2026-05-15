@@ -89,6 +89,11 @@ module "ses_platform_pagopa_it" {
       sid       = "Statistics"
       actions   = ["ses:GetSendQuota"]
       resources = ["*"]
+    },
+    {
+      sid       = "AccountStatistics"
+      actions   = ["ses:GetAccount"]
+      resources = ["*"]
     }
   ]
 }
