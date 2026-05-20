@@ -57,6 +57,11 @@ module "ses_ricevute_pagopa_it" {
       sid       = "Statistics"
       actions   = ["ses:GetSendQuota"]
       resources = ["*"]
+    },
+    {
+      sid       = "AccountStatistics"
+      actions   = ["ses:GetAccount"]
+      resources = ["*"]
     }
   ]
 }
