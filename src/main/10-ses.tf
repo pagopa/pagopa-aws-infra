@@ -23,7 +23,7 @@ module "ses_pagopa_gov_it" {
   ]
 
   alarms = {
-    actions                    = [aws_sns_topic.alarms.arn]
+    actions                    = [try(aws_sns_topic.alarms.0.arn, "")]
     daily_send_quota_threshold = 320000
     daily_send_quota_period    = 60 * 60 * 24 # 1 day
 
@@ -69,7 +69,7 @@ module "ses_ricevute_pagopa_it" {
 
 # https://docs.aws.amazon.com/general/latest/gr/ses.html
 module "ses_platform_pagopa_it" {
-  source              = "github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0"
+  source = "github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0"
 
   providers = {
     aws = aws.eu-central-1
@@ -77,7 +77,7 @@ module "ses_platform_pagopa_it" {
 
   domain              = "platform.pagopa.it"
   mail_from_subdomain = "email"
-  aws_region          = "eu-central-1" //var.aws_region # https://docs.aws.amazon.com/ses/latest/dg/smtp-credentials.html
+  aws_region          = var.aws_region # https://docs.aws.amazon.com/ses/latest/dg/smtp-credentials.html
 
   iam_permissions = [
     "ses:SendCustomVerificationEmail",
@@ -110,7 +110,7 @@ module "ses_platform_pagopa_it" {
 module "ses_selfcare_platform_pagopa_it" {
   source              = "github.com/pagopa/terraform-aws-ses.git?ref=v1.2.0"
   domain              = "platform.pagopa.it"
-  mail_from_subdomain = "backoffice"
+  mail_from_subdomain = "ndp"
   aws_region          = var.aws_region
 
   iam_permissions = [

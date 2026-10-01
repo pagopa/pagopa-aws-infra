@@ -35,6 +35,7 @@ settings.json
 __TMP
 .metals/
 /.idea
+mise.toml
 
 # zip files
 *.zip
